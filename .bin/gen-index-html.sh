@@ -46,7 +46,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		<td>ArgoCD</td>
 		<td>
 			<a target="_blank" href="http://argo-cd.local/">http://argo-cd.local/</a><br />
-			token: $argocdPwd <button id="copyArgoCDPasswordButton">copy to clipboard</button><br />
+			user: admin
+			pass: $argocdPwd <button id="copyArgoCDPasswordButton">copy to clipboard</button><br />
 		</td>
 	</tr>
 	<tr>

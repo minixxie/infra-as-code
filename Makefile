@@ -1,6 +1,6 @@
 .PHONY: index
 index:
-        ./.bin/gen-index-html.sh
+	./.bin/gen-index-html.sh
 
 .PHONY: install-tools
 install-tools: terraform docker k8s
