@@ -1,3 +1,9 @@
+.PHONY: check
+check:
+	kubectl get pod -n argo-cd
+	@argocdPwd=$$(kubectl get -n argo-cd secret argocd-initial-admin-secret -o go-template='{{.data.password | base64decode}}' ; echo); \
+		echo "user: admin"; echo "pass: $$argocdPwd"
+
 .PHONY: up
 up:
 	helm repo add argo-cd https://argoproj.github.io/argo-helm
