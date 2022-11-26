@@ -9,7 +9,7 @@ check:
 up:
 	helm repo add argo-cd https://argoproj.github.io/argo-helm
 	helm dep update .
-	helm install argo-cd . -n argo-cd --create-namespace
+	helm upgrade --install argo-cd . -n argo-cd --create-namespace
 
 .PHONY: down
 down:
