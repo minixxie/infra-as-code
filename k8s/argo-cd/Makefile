@@ -2,6 +2,7 @@
 check:
 	kubectl get pod -n argo-cd
 	@argocdPwd=$$(kubectl get -n argo-cd secret argocd-initial-admin-secret -o go-template='{{.data.password | base64decode}}' ; echo); \
+		echo "URL: http://argo-cd.local/" ; \
 		echo "user: admin"; echo "pass: $$argocdPwd"
 
 .PHONY: up
