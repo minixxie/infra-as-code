@@ -10,4 +10,4 @@ up:
 .PHONY: down
 down:
 	#kubectl delete -f ./ingress.yaml
-	helm uninstall localstack
+	helm uninstall localstack -n localstack
