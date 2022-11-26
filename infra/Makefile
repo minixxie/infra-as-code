@@ -15,3 +15,8 @@ minikube:
 	minikube addons enable ingress
 	minikube addons list
 	make check
+	make hosts
+
+.PHONY: hosts
+hosts:
+	@./.bin/gen-hosts.sh $$(minikube ip)
