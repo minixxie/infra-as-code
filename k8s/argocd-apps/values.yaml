@@ -34,6 +34,10 @@ argocd-apps:
               value: "true"
             - name: ingress.host
               value: kafka-ui.local
+            - name: 'yamlApplicationConfig.kafka.clusters[0].name'
+              value: yaml
+            - name: 'yamlApplicationConfig.kafka.clusters[0].bootstrapServers'
+              value: kafka.kafka.svc:9092
       destination:
         server: https://kubernetes.default.svc
         namespace: kafka
