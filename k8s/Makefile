@@ -1,13 +1,5 @@
 SHELL := /bin/bash
 
-.PHONY: check
-check:
-	kubectl get node
-	kubectl config get-clusters
-	kubectl config current-context
-	kubectl get namespace
-	kubectl get all -A
-
 # minikube delete; minikube start --driver=virtualbox && minikube addons enable ingress
 # minikube delete; minikube start --driver=hyperkit && minikube addons enable ingress
 # minikube delete; minikube start --driver=hyperkit --cpus 4 --memory 8192 && minikube addons enable ingress
@@ -48,26 +40,3 @@ microk8s:
 .PHONY: index
 index:
 	./bin/gen-index-html.sh
-
-.PHONY: kubeapps
-kubeapps:
-	make -C ./kubeapps up
-
-.PHONY: mysql
-mysql:
-	make -C ./mysql up \
-		&& make mysql-exporter
-
-.PHONY: mysql-exporter
-mysql-exporter:
-	make -C ./prometheus-mysql-exporter up
-
-.PHONY: kube-prometheus-stack
-kube-prometheus-stack:
-	make -C ./kube-prometheus-stack up \
-		&& make mysql-exporter
-
-.PHONY: kafka
-kafka:
-	make -C ./kafka up \
-		&& make -C ./kafka-ui up

@@ -10,5 +10,9 @@ $1  mimir.local
 $1  kubeapps.local
 $1  kafka.local
 $1  kafka-ui.local
+$1  harbor.local
 $1  echo-server-api.local
+# if you install local-stack in k8s:
+$1  localstack.local
+$1  my-bucket.s3.localhost.localstack.cloud
 EOF
