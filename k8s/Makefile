@@ -1,5 +1,10 @@
 SHELL := /bin/bash
 
+.PHONY: check
+check:
+	kubectl get node
+	kubectl get namespace
+
 # minikube delete; minikube start --driver=virtualbox && minikube addons enable ingress
 # minikube delete; minikube start --driver=hyperkit && minikube addons enable ingress
 # minikube delete; minikube start --driver=hyperkit --cpus 4 --memory 8192 && minikube addons enable ingress
