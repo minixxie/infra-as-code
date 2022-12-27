@@ -14,6 +14,7 @@ $1  kafka-ui.local
 $1  redisinsight.local
 $1  pgadmin4.local
 $1  harbor.local
+$1  jaeger.local
 $1  echo-server-api.local
 # if you install local-stack in k8s:
 $1  localstack.local
